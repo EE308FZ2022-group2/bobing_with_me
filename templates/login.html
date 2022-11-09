@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image:url('../static/png/hhh2.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-position:center;
+            /* background-color: rgba(235, 235, 235, 0.199); */
+        }
+
+        
+        
+        form {
+           
+            width: 330px;  /*文本框宽*/
+            height: 500px;   /*文本框位置高*/
+            /* background-color: rgb(255, 255, 255); */
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -10%);
+            /* 相对于现在所处位置的位移变化，x便偏移自己宽度的50%，y偏移自己高度的50% */
+        }
+        
+        h2 {  /**/
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: center;
+            color: #ffffff90;
+        }
+
+        h3 {  /**/
+            position: fixed;
+            top: 185px;
+            left: 65px;
+            font-size: 15px;
+            text-align: center;
+            color: red;
+        }
+         
+        form input {    /*调文本框*/
+                border: 0;
+                width: 100%;
+                font-size: 15px;
+                text-align: center;
+                color: #fff;
+                background: transparent;
+                border-bottom: 1px solid #fff;  /*横线厚度*/
+                padding: 5px 5px;
+                outline: none;
+                margin-top: 25px;
+        }
+        
+        .mya {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            position: fixed;
+            left: 90px;
+            top: 300px;
+            color: white;
+        }
+        
+        .mya a:nth-child(1) {
+            float: left;
+        }
+        
+        .mya a:nth-child(2) {
+            float: right;
+        }
+        
+        button {   /*调整GO ON*/
+                margin-top: 50px;
+                width: 60%;
+                height: 30px;
+                border-radius: 20px;
+                border: 0;
+                color: #fff;
+                text-align: center;
+                line-height: 25px;
+                font-size: 18px;
+                cursor: pointer;
+                background-image: linear-gradient(to right, #30087ac4, #8b62bd);
+        }
+
+        button:active {
+            box-shadow: 0 0 3px rgba(12, 15, 202, 0.199);
+            /* x偏移  y偏移  模糊值 颜色 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="login-form" method="post">
+        <h2>LOGIN</h2>
+            <input id="username" type="text" name="username" placeholder="Enter your account"><br>
+            <input id="password" type="password" name="password" placeholder="Enter yourr code"><br>
+            <h3> {{ err }} </h3>
+        <div class="mya">
+            <a href="">Forget The Password? </a><br>
+            <a href="http://127.0.0.1:5678/register">Register</a><br>
+        </div>
+        <div align="center"><button onClick="clickme()">GO ON</button></div>
+
+    </form>
+
+    <!-- 
+        js引入方式：
+        1、写在body标签里面，通过script包起来
+        2、引入外部js文件  再通过script的src属性引入进来 
+    -->
+
+    <script>
+        // let 定义一个变量
+        let username = document.getElementById('username')
+        let password = document.getElementById('password')
+        let loginBtn = document.getElementById('login-btn')
+            // js里面不允许出现 - 
+
+        //一般的交互事件
+        // onclick 点击事件
+        // onmousemove  鼠标移入事件
+        // onmouseout  鼠标移出事件
+        // ondblclick  双击事件
+        // onfocus  input框获取焦点事件
+        // onblur  失焦事件
+
+
+        loginBtn.onclick = function() {
+            let usernamevalue = username.value
+            let passwordvalue = password.value
+                // console.log(usernamevalue, passwordvalue)
+                // 便于检查的时候判断是否成功
+            if (!usernamevalue) {
+                return alert('Please enter legally')
+                    //return 跳出当前函数，并且返回后面的值
+            }
+            console.log(usernamevalue, passwordvalue)
+
+        }
+    </script>
+</body>
+
+</html>

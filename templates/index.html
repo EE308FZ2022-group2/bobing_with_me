@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a
+            {
+                text-decoration: none;
+            }
+        img
+            {
+                position:fixed;
+                top:30px;
+                right:700px;
+            }
+
+        .mulitiply
+            {
+                font-size:27px;
+                position:fixed;
+                top:262px;
+                right:792px;
+                color: rgba(255, 255, 255);
+                opacity: 0.7;
+            }
+
+        .individual
+            {
+                font-size:27px;
+                position:fixed;
+                top:400px;
+                right:795px;
+                color: rgba(255, 255, 255);
+                opacity: 0.7;
+            }
+
+        .rules
+            {
+                font-size:27px;
+                position:fixed;
+                top:540px;
+                right:780px;
+                color: rgb(255, 255, 255);
+                opacity: 0.7;
+            }
+    </style>
+</head>
+<body>
+    <img src="../static/png/index_img.gif" alt="This is game hall" title="This is game hall" height="780">
+    <a  href="{{ url_for('mutiplater') }}" class="mulitiply" >MULTIPLAYER</a>
+    <a  href="{{ url_for('individual') }}" class="individual" >INDIVIDUAL</a>
+    <a  href="{{ url_for('rules') }}" class="rules" >KNOW RULES</a>
+</body>
+</html>

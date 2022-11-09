@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>骰子游戏</title>
+	<style>
+	.container {
+        background-image: url("static/png/individual.png");
+        background-position: center;
+        width: 417px;
+		height: 852px;
+		margin: auto;
+		text-align: center;
+	}
+
+	.dice {
+		text-align: center;
+		display: inline-block;
+		margin: 10px;
+	}
+
+    .img1 {
+        width: 4%;
+        position: absolute;
+        left: 647px;
+        top: 404px;
+    }
+
+    .img2 {
+        width: 4%;
+        position: absolute;
+        left: 727px;
+        top: 404px;
+    }
+
+    .img3 {
+        width: 4%;
+        position: absolute;
+        left: 807px;
+        top: 404px;
+    }
+
+    .img4 {
+        width: 4%;
+        position: absolute;
+        left: 647px;
+        top: 484px;
+    }
+
+    .img5 {
+        width: 4%;
+        position: absolute;
+        left: 727px;
+        top: 484px;
+    }
+
+    .img6 {
+        width: 4%;
+        position: absolute;
+        left: 807px;
+        top: 484px;
+    }
+
+	body {
+		background-size: 100% 100%;
+		height: 95vh;
+		margin: 30px;
+	}
+
+	h1 {
+        position: absolute;
+        left: 558px;
+        top: 90px;
+        width: 211px;
+        height: 78px;
+		margin: 100px;
+		text-align: center;
+        font-family: "Times New Roman Negreta cursiva", "Times New Roman Normal", "Times New Roman", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 20px;
+        color: #F21010;
+	}
+
+	p {
+		font-size: 2rem;
+		color: #4ecca3;
+		font-family: "Indie Flower", cursive;
+	}
+
+	img {
+		width: 20%;
+	}
+
+    .i1 {
+        display: block;
+    }
+
+    .i2 {
+        display: none;
+    }
+
+    .i3 {
+        display: none;
+    }
+
+    .i4 {
+        display: none;
+    }
+
+    .i5 {
+        display: none;
+    }
+
+    .i6 {
+        display: none;
+    }
+
+	.bottom {
+		padding-top: 200px;
+	}
+
+	.butn {
+        background-color: rgba(0,0,0,0.2);
+		font-family: "Georgia Negreta", "Georgia Normal", "Georgia", sans-serif;
+		border-radius: 50px;
+		color: white;
+		font-size: 30px;
+		padding: 16px 25px 16px 25px;
+		text-decoration: none;
+        cursor: pointer;
+	}
+
+	.butn:hover {
+		background: #232931;
+		text-decoration: none;
+	}
+
+    #b1 {
+        position: absolute;
+        left: 695px;
+        top: 650px;
+    }
+
+    #b2 {
+        position: absolute;
+        left: 695px;
+        top: 753px;
+    }
+
+	.page-footer a {
+	    position: absolute;
+        left: 650px;
+        top: 850px;
+        width: 216px;
+        height: 21px;
+        overflow: hidden;
+        font-family: "Arial Normal", "Arial", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        letter-spacing: normal;
+        color: white;
+	}
+</style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+        mid autumn bobing
+    </h1>
+    <div class="dice">
+        <img class="img1 i1" src="../static/png/dice1.png" alt="1">
+        <img class="img1 i2" src="../static/png/dice2.png" alt="2">
+        <img class="img1 i3" src="../static/png/dice3.png" alt="3">
+        <img class="img1 i4" src="../static/png/dice4.png" alt="4">
+        <img class="img1 i5" src="../static/png/dice5.png" alt="5">
+        <img class="img1 i6" src="../static/png/dice6.png" alt="6">
+    </div>
+
+    <div class="dice">
+        <img class="img2 i1" src="../static/png/dice1.png" alt="1">
+        <img class="img2 i2" src="../static/png/dice2.png" alt="2">
+        <img class="img2 i3" src="../static/png/dice3.png" alt="3">
+        <img class="img2 i4" src="../static/png/dice4.png" alt="4">
+        <img class="img2 i5" src="../static/png/dice5.png" alt="5">
+        <img class="img2 i6" src="../static/png/dice6.png" alt="6">
+    </div>
+
+    <div class="dice">
+        <img class="img3 i1" src="../static/png/dice1.png" alt="1">
+        <img class="img3 i2" src="../static/png/dice2.png" alt="2">
+        <img class="img3 i3" src="../static/png/dice3.png" alt="3">
+        <img class="img3 i4" src="../static/png/dice4.png" alt="4">
+        <img class="img3 i5" src="../static/png/dice5.png" alt="5">
+        <img class="img3 i6" src="../static/png/dice6.png" alt="6">
+    </div>
+    <br>
+    <div class="dice">
+        <img class="img4 i1" src="../static/png/dice1.png" alt="1">
+        <img class="img4 i2" src="../static/png/dice2.png" alt="2">
+        <img class="img4 i3" src="../static/png/dice3.png" alt="3">
+        <img class="img4 i4" src="../static/png/dice4.png" alt="4">
+        <img class="img4 i5" src="../static/png/dice5.png" alt="5">
+        <img class="img4 i6" src="../static/png/dice6.png" alt="6">
+    </div>
+
+    <div class="dice">
+        <img class="img5 i1" src="../static/png/dice1.png" alt="1">
+        <img class="img5 i2" src="../static/png/dice2.png" alt="2">
+        <img class="img5 i3" src="../static/png/dice3.png" alt="3">
+        <img class="img5 i4" src="../static/png/dice4.png" alt="4">
+        <img class="img5 i5" src="../static/png/dice5.png" alt="5">
+        <img class="img5 i6" src="../static/png/dice6.png" alt="6">
+    </div>
+
+    <div class="dice">
+        <img class="img6" src="../static/png/dice1.png" alt="6">
+    </div>
+    <div class="bottom">
+    <button type="button" class="butn" id="b1"
+      onClick="rollTheDice()">
+        Open
+    </button>
+  </div>
+  <div class="bottom">
+    <button type="button" class="butn" id="b2"
+      onClick="windows.location.href('www.baidu.com')">
+        Again
+    </button>
+  <div class="page-footer">
+    <a href="rules"> -click here to check rules- </a>
+  </div>
+  </div>
+  </div>
+</body>
+<script>
+  // 玩家姓名
+  var player1 = "Player 1";
+  var player2 = "Player 2";
+
+  // 轮播功能
+  var index = 0
+  var flag = null
+  function changeImg() {
+      index++
+      var a = document.getElementsByClassName("img1")
+      var b = document.getElementsByClassName("img2")
+      var c = document.getElementsByClassName("img3")
+      var d = document.getElementsByClassName("img4")
+      var e = document.getElementsByClassName("img5")
+      var f = document.getElementsByClassName("img6")
+      if (index >= a.length) index=0
+      for (var i=0; i<a.length; i++) {
+          a[i].style.display = 'none'
+          b[i].style.display = 'none'
+          c[i].style.display = 'none'
+          d[i].style.display = 'none'
+          e[i].style.display = 'none'
+          f[i].style.display = 'none'
+      }
+      a[index].style.display = 'block'
+      b[index].style.display = 'block'
+      c[index].style.display = 'block'
+      d[index].style.display = 'block'
+      e[index].style.display = 'block'
+      f[index].style.display = 'block'
+  }
+
+  // 掷骰子的功能
+  function rollTheDice() {
+    setTimeout(function () {
+        if (document.getElementById("b1").innerText === "Open") {
+            document.getElementById("b1").innerText = "Stop"
+            for (var m=1; m<=6; m++) {
+                document.querySelector(".img"+m).setAttribute("src", "../static/png/tzz.gif")
+            }
+        } else {
+            document.getElementById("b1").innerText = "Open"
+            var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber3 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber4 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber5 = Math.floor(Math.random() * 6) + 1;
+            var randomNumber6 = Math.floor(Math.random() * 6) + 1;
+            document.querySelector(".img1").setAttribute("src", "../static/png/dice" + randomNumber1 + ".png");
+
+            document.querySelector(".img2").setAttribute("src", "../static/png/dice" + randomNumber2 + ".png");
+
+            document.querySelector(".img3").setAttribute("src", "../static/png/dice" + randomNumber3 + ".png");
+
+            document.querySelector(".img4").setAttribute("src", "../static/png/dice" + randomNumber4 + ".png");
+
+            document.querySelector(".img5").setAttribute("src", "../static/png/dice" + randomNumber5 + ".png");
+
+            document.querySelector(".img6").setAttribute("src", "../static/png/dice" + randomNumber6 + ".png");
+            var result = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5, randomNumber6]
+            var count = [0, 0, 0, 0, 0, 0]
+            for (var i in result) {
+                count[result[i] - 1]++
+            }
+            console.log(result)
+            console.log(count)
+            if (count[3] === 4 && count[0] === 2) {
+                document.querySelector("h1").innerHTML = "Chajinhua!"
+            }
+            if (count[3] === 6) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Liubeihong)!"
+            } else if (count[0] === 6) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Biandijin)!"
+            } else if (count[1] === 6) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Heiliubo)!"
+            } else if (count[3] === 5 && count[0] === 1) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Wuhong)!"
+            } else if (count[1] === 5) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Wuzidengke)!"
+            } else if (count[3] === 4) {
+                document.querySelector("h1").innerHTML = "Zhuanyuan(Sidianhong)!"
+            }
+            else if (count[0] === 1 && count[1] === 1 && count[2] === 1 && count[3] === 1 && count[4] === 1 && count[5] === 1) {
+                document.querySelector("h1").innerHTML = "Duitang(Bangyang)!"
+            }
+            else if (count[3] === 3) {
+                document.querySelector("h1").innerHTML = "Sanhong(Tanhua)!"
+            }
+            else if (count[1] === 4) {
+                document.querySelector("h1").innerHTML = "Sijing(Jinshi)!"
+            }
+            else if (count[3] === 2) {
+                document.querySelector("h1").innerHTML = "Erju(Juren)!"
+            }
+            else if (count[3] === 1) {
+                document.querySelector("h1").innerHTML = "Yixiu(Xiucai)!"
+            } else {
+                document.querySelector("h1").innerHTML = "Thanks for participation!"
+            }
+        }
+    }, 1000)
+  }
+</script>
+
+</html>
