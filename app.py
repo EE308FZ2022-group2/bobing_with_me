@@ -95,7 +95,7 @@ def register():
     except AttributeError:
         conf.e()
         logging.error(AttributeError)
-    return render_template("login.html", form=form)
+    return redirect(url_for('login')) 
 
 
 @app.route('/')
