@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+            {
+                width:4500px;
+                height:1000px;
+                background-image: -webkit-linear-gradient(top,rgba(251, 250, 252, 0.984),rgb(160, 146, 201),rgb(94, 73, 171));
+            }
+        a
+            {
+                text-decoration: none;
+            }
+        img
+            {
+                position:fixed;
+                top:30px;
+                right:700px;
+            }
+        
+        .dual 
+            { 
+                font-size:27px;
+                position:fixed;
+                top:320px;
+                right:805px;
+                color: rgba(255, 255, 255);
+                opacity: 0.8;
+            }
+        
+        .triple 
+            { 
+                font-size:27px;
+                position:fixed;
+                top:540px;
+                right:800px;
+                color: rgba(255, 255, 255);
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="../static/png/Multi_Choice.gif" alt="This is Multi Mode Choice" title="This is Multi Mode Choice"  height="780">
+    <a  href="{{ url_for('mutiplater') }}" class="dual" >Dual Player</a>
+    <a  href="{{ url_for('triple') }}" class="triple" >Three Player</a>
+    </div>
+</body>
+</html>

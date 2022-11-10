@@ -46,12 +46,22 @@
                 color: rgb(255, 255, 255);
                 opacity: 0.7;
             }
+
+        .ranking
+        {
+            font-size: 20px;
+            position: fixed;
+            top: 650px;
+            right: 775px;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <img src="../static/png/index_img.gif" alt="This is game hall" title="This is game hall" height="780">
-    <a  href="{{ url_for('mutiplater') }}" class="mulitiply" >MULTIPLAYER</a>
+    <a  href="{{ url_for('multi') }}" class="mulitiply" >MULTIPLAYER</a>
     <a  href="{{ url_for('individual') }}" class="individual" >INDIVIDUAL</a>
     <a  href="{{ url_for('rules') }}" class="rules" >KNOW RULES</a>
+    <a  href="{{ url_for('ranking') }}" class="ranking"> -See the ranking list- </a>
 </body>
 </html>

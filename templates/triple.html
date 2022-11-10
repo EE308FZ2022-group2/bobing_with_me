@@ -225,7 +225,7 @@
         user3
     </h3>
     <h4>
-        win
+
     </h4>
     <div class="dice">
         <img class="img1 i1" src="../static/png/dice1.png" alt="1">
@@ -288,7 +288,7 @@
   </div>
   <div class="bottom">
     <button type="button" class="butn" id="b2"
-      onClick="windows.location.href('www.baidu.com')">
+      onClick="restart()">
         Again
     </button>
   <div class="page-footer">
@@ -331,13 +331,40 @@
       f[index].style.display = 'block'
   }
 
+  function restart() {
+      setTimeout(function () {
+          if (document.querySelector("h1").innerHTML !== "user1" || document.getElementById("b1").innerHTML === "Stop" ) {
+              document.querySelector("h1").innerHTML = "user1"
+              document.querySelector("h2").innerHTML = "user2"
+              document.querySelector("h3").innerHTML = "user3"
+
+              document.querySelector(".img1").setAttribute("src", "../static/png/dice1.png");
+
+            document.querySelector(".img2").setAttribute("src", "../static/png/dice1.png");
+
+            document.querySelector(".img3").setAttribute("src", "../static/png/dice1.png");
+
+            document.querySelector(".img4").setAttribute("src", "../static/png/dice1.png");
+
+            document.querySelector(".img5").setAttribute("src", "../static/png/dice1.png");
+
+            document.querySelector(".img6").setAttribute("src", "../static/png/dice1.png");
+            document.querySelector("h4").innerHTML = ""
+            points = [-1, -1, -1]
+
+          }
+      }, 1000)
+  }
+
   function open() {
-      flag=setInterval(changeImg, 100)
       document.getElementById("b1").innerText = "Stop"
+      for (var i = 1; i <= 6; i++) {
+          document.querySelector(".img" + i).setAttribute("src", "../static/png/tzz.gif");
+
+      }
   }
 
   function clear() {
-      clearInterval(flag)
       document.getElementById("b1").innerText = "Open"
   }
 
@@ -349,17 +376,17 @@
         var randomNumber5 = Math.floor(Math.random() * 6) + 1;
         var randomNumber6 = Math.floor(Math.random() * 6) + 1;
 
-        document.querySelector(".img1").setAttribute("src", "dice" + randomNumber1 + ".png");
+        document.querySelector(".img1").setAttribute("src", "../static/png/dice" + randomNumber1 + ".png");
 
-        document.querySelector(".img2").setAttribute("src", "dice" + randomNumber2 + ".png");
+        document.querySelector(".img2").setAttribute("src", "../static/png/dice" + randomNumber2 + ".png");
 
-        document.querySelector(".img3").setAttribute("src", "dice" + randomNumber3 + ".png");
+        document.querySelector(".img3").setAttribute("src", "../static/png/dice" + randomNumber3 + ".png");
 
-        document.querySelector(".img4").setAttribute("src", "dice" + randomNumber4 + ".png");
+        document.querySelector(".img4").setAttribute("src", "../static/png/dice" + randomNumber4 + ".png");
 
-        document.querySelector(".img5").setAttribute("src", "dice" + randomNumber5 + ".png");
+        document.querySelector(".img5").setAttribute("src", "../static/png/dice" + randomNumber5 + ".png");
 
-        document.querySelector(".img6").setAttribute("src", "dice" + randomNumber6 + ".png");
+        document.querySelector(".img6").setAttribute("src", "../static/png/dice" + randomNumber6 + ".png");
         var result = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5, randomNumber6]
         var count = [0, 0, 0, 0, 0, 0]
         for (var j in result) {
@@ -428,10 +455,11 @@
                     break
                 }
             }
+            console.log(points)
             if (points[points.length-1] !== -1) {
                 var maxPoint = Math.max(points)
                 var maxIdx = -1
-                for (var k = 0; k < points.length; j++) {
+                for (var k = 0; k < points.length; k++) {
                     if (points[k] === maxPoint) {
                         maxIdx = k
                     }

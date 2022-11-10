@@ -229,15 +229,16 @@
   </div>
   <div class="bottom">
     <button type="button" class="butn" id="b2"
-      onClick="windows.location.href('www.baidu.com')">
+      onClick="restart()">
         Again
     </button>
   <div class="page-footer">
-    <a href="rules"> -click here to check rules- </a>
+	  <a href="{{ url_for('rules') }}"> -click here to check rules- </a>
   </div>
   </div>
   </div>
 </body>
+<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 <script>
   // 玩家姓名
   var player1 = "Player 1";
@@ -246,6 +247,26 @@
   // 轮播功能
   var index = 0
   var flag = null
+
+  function restart() {
+      setTimeout(function () {
+          if (document.getElementById("b1").innerText === "Stop") {
+              document.getElementById("b1").innerText = "Open"
+              document.querySelector("h1").innerHTML = "mid autumn bobing!"
+
+              document.querySelector(".img1").setAttribute("src", "../static/png/dice1.png");
+
+              document.querySelector(".img2").setAttribute("src", "../static/png/dice1.png");
+              document.querySelector(".img3").setAttribute("src", "../static/png/dice1.png");
+              document.querySelector(".img4").setAttribute("src", "../static/png/dice1.png");
+
+              document.querySelector(".img5").setAttribute("src", "../static/png/dice1.png");
+
+              document.querySelector(".img6").setAttribute("src", "../static/png/dice1.png");
+          }
+      }, 1000)
+  }
+
   function changeImg() {
       index++
       var a = document.getElementsByClassName("img1")
@@ -300,6 +321,7 @@
             document.querySelector(".img6").setAttribute("src", "../static/png/dice" + randomNumber6 + ".png");
             var result = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5, randomNumber6]
             var count = [0, 0, 0, 0, 0, 0]
+            var point = 0
             for (var i in result) {
                 count[result[i] - 1]++
             }
@@ -307,37 +329,63 @@
             console.log(count)
             if (count[3] === 4 && count[0] === 2) {
                 document.querySelector("h1").innerHTML = "Chajinhua!"
+                point = 12
             }
             if (count[3] === 6) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Liubeihong)!"
+                point = 11
             } else if (count[0] === 6) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Biandijin)!"
+                point = 10
             } else if (count[1] === 6) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Heiliubo)!"
+                point = 9
             } else if (count[3] === 5 && count[0] === 1) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Wuhong)!"
+                point = 8
             } else if (count[1] === 5) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Wuzidengke)!"
+                point = 7
             } else if (count[3] === 4) {
                 document.querySelector("h1").innerHTML = "Zhuanyuan(Sidianhong)!"
+                 point = 6
             }
             else if (count[0] === 1 && count[1] === 1 && count[2] === 1 && count[3] === 1 && count[4] === 1 && count[5] === 1) {
                 document.querySelector("h1").innerHTML = "Duitang(Bangyang)!"
+                point = 5
             }
             else if (count[3] === 3) {
                 document.querySelector("h1").innerHTML = "Sanhong(Tanhua)!"
+                point = 4
             }
             else if (count[1] === 4) {
                 document.querySelector("h1").innerHTML = "Sijing(Jinshi)!"
+                point = 3
             }
             else if (count[3] === 2) {
                 document.querySelector("h1").innerHTML = "Erju(Juren)!"
+                point = 2
             }
             else if (count[3] === 1) {
                 document.querySelector("h1").innerHTML = "Yixiu(Xiucai)!"
+                point = 1
             } else {
                 document.querySelector("h1").innerHTML = "Thanks for participation!"
             }
+            var data = {
+                point: point
+            }
+            function sendData() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/individual',
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {},
+                    error: function (xhr, type) {}
+                })
+            }
+            sendData()
         }
     }, 1000)
   }

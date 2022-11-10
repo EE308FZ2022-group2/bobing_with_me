@@ -1,7 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import request, url_for, render_template, redirect, Flask, session, flash
 from flask_wtf import FlaskForm
-from flask_login import LoginManager, login_user, login_required
+from flask_login import LoginManager, login_user, login_required, current_user
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, EqualTo, Regexp
 from datetime import timedelta
@@ -95,7 +95,7 @@ def register():
     except AttributeError:
         conf.e()
         logging.error(AttributeError)
-    return redirect(url_for('login')) 
+    return redirect(url_for('login'))
 
 
 @app.route('/')
@@ -119,8 +119,57 @@ def mutiplater():
 @app.route('/individual', methods=['GET'])
 @login_required
 def individual():
+    get_point = request.args.get('point')
+    sql = f"select money from users where username = '{current_user.username}'"
+    try:
+        cursor.execute(sql)
+        conf.db.commit()
+        result = cursor.fetchall()
+        if result:
+            plus = result[0][0] + int(get_point)
+            sql_update = f"update users set money = '{plus}' where username = '{current_user.username}'"
+            cursor.execute(sql_update)
+            conf.db.commit()
+    except Exception as e:
+        conf.e()
+        logging.error(e)
+
     return render_template('individual.html')
 
 
+@app.route('/multi', methods=['GET'])
+@login_required
+def multi():
+    return render_template('Muliti_Mode.html')
+
+
+@app.route('/triple', methods=['GET'])
+@login_required
+def triple():
+    return render_template('triple.html')
+
+
+@app.route('/ranking', methods=['GET'])
+@login_required
+def ranking():
+    sql = "select username, money from users order by money desc limit 5"
+    try:
+        cursor.execute(sql)
+        conf.db.commit()
+        result = cursor.fetchall()
+
+    except Exception as e:
+        conf.e()
+        logging.error(e)
+        return render_template('test.html')
+    return render_template('ranking.html',
+                           u1=result[0][0], m1=result[0][1],
+                           u2=result[1][0], m2=result[1][1],
+                           u3=result[2][0], m3=result[2][1],
+                           u4=result[3][0], m4=result[3][1],
+                           u5=result[4][0], m5=result[4][1]
+                           )
+
+
 if __name__ == '__main__':
-    app.run(port=5678, debug=True)
+    app.run(host='0.0.0.0', port=5678, debug=True)
