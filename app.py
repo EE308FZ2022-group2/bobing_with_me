@@ -85,6 +85,9 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     form = RegisterForm()
+    if not form.username.data or not form.password.data or not form.email.data:
+        emsg = "please enter the message"
+        return render_template('register.html', err=emsg)
     sql = "insert into users(username, password, email, money) " \
           "VALUES ('%s', '%s', '%s', '%d')" % \
           (form.username.data, generate_password_hash(form.password.data), form.email.data, 0)

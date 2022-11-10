@@ -62,21 +62,19 @@
                 font-size: 20px;
                 background-image: linear-gradient(to right, #30087ac4, #7e53b3);
               }
-              .sign_up {
-                margin-top: 45%;
-                margin-left: 60%;
-              }
             
               a{
                 color: #fff;
               }
-            .login_box  button  a{
+            .login_box  button  a {
                 color: #fff;
-              }
-              .forget{
-                  color: white;
-                  margin-top: 20px;
-                  /* background-color: #30cfd0; */
+            }
+              h1 {
+                  color: red;
+                  position: fixed;
+                  font-size: small;
+                  top: 580px;
+                  right: 500px;
               }
         </style>
         <title>注册/登录</title>
@@ -92,6 +90,7 @@
             <input name="username" type="text" placeholder="Creat your account">
             <input name="password" type="password" placeholder="Creat your password">
             <input name="email" type="text" placeholder="Enter your email">
+            <h1>{{ err }}</h1>
           <button type="submit">GO ON</button><br>
         </form>
     </body>
