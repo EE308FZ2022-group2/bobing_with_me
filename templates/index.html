@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+	div
+            {
+                width:4500px;
+                height:1000px;
+                background-image: -webkit-linear-gradient(top,rgba(251, 250, 252, 0.984),rgb(160, 146, 201),rgb(94, 73, 171));
+            }
+
         a
             {
                 text-decoration: none;
@@ -58,10 +65,12 @@
     </style>
 </head>
 <body>
+<div>
     <img src="../static/png/index_img.gif" alt="This is game hall" title="This is game hall" height="780">
     <a  href="{{ url_for('multi') }}" class="mulitiply" >MULTIPLAYER</a>
     <a  href="{{ url_for('individual') }}" class="individual" >INDIVIDUAL</a>
     <a  href="{{ url_for('rules') }}" class="rules" >KNOW RULES</a>
     <a  href="{{ url_for('ranking') }}" class="ranking"> -See the ranking list- </a>
+</div>
 </body>
 </html>

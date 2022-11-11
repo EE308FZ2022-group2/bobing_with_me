@@ -171,7 +171,7 @@
 <body>
   <div class="container">
     <h1>
-        mid autumn bobing
+        mid autumn bobing!
     </h1>
     <div class="dice">
         <img class="img1 i1" src="../static/png/dice1.png" alt="1">
@@ -250,7 +250,7 @@
 
   function restart() {
       setTimeout(function () {
-          if (document.getElementById("b1").innerText === "Stop") {
+          if (document.getElementById("b1").innerText === "Stop" || document.querySelector("h1").innerHTML !== "mid autumn bobing") {
               document.getElementById("b1").innerText = "Open"
               document.querySelector("h1").innerHTML = "mid autumn bobing!"
 

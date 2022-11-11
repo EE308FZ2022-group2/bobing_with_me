@@ -80,7 +80,7 @@
         font-family: "Times New Roman Negreta cursiva", "Times New Roman Normal", "Times New Roman", sans-serif;
         font-weight: 700;
         font-style: italic;
-        font-size: 30px;
+        font-size: 20px;
         color: #F21010;
 	}
 
@@ -95,7 +95,7 @@
         font-family: "Times New Roman Negreta cursiva", "Times New Roman Normal", "Times New Roman", sans-serif;
         font-weight: 700;
         font-style: italic;
-        font-size: 30px;
+        font-size: 20px;
         color: #F21010;
     }
 
@@ -110,7 +110,7 @@
         font-family: "Times New Roman Negreta cursiva", "Times New Roman Normal", "Times New Roman", sans-serif;
         font-weight: 700;
         font-style: italic;
-        font-size: 30px;
+        font-size: 20px;
         color: #F21010;
     }
 
@@ -125,7 +125,7 @@
         font-family: "Times New Roman Negreta cursiva", "Times New Roman Normal", "Times New Roman", sans-serif;
         font-weight: 700;
         font-style: italic;
-        font-size: 30px;
+        font-size: 20px;
         color: #F21010;
     }
 
@@ -457,14 +457,15 @@
             }
             console.log(points)
             if (points[points.length-1] !== -1) {
-                var maxPoint = Math.max(points)
+                var maxPoint = -1
                 var maxIdx = -1
                 for (var k = 0; k < points.length; k++) {
-                    if (points[k] === maxPoint) {
-                        maxIdx = k
+			if (points[k] >= maxPoint) {
+				maxPoint = points[k]
+                        	maxIdx = k+1
                     }
                 }
-                document.querySelector("h4").innerHTML = "player" + k + "win!"
+                document.querySelector("h4").innerHTML = "player" + maxIdx + "win!"
                 points = [-1, -1, -1]
             }
         }
